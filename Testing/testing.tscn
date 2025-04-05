@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c73jm8j0eu1pv"]
+
+[ext_resource type="PackedScene" uid="uid://5ygohw6bucf0" path="res://Objects/Item/item.tscn" id="1_diwf3"]
+[ext_resource type="Resource" uid="uid://dmk0pfr4v01de" path="res://Assets/Items/ItemData/Basketball.tres" id="2_10bbp"]
+[ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="3_diwf3"]
+[ext_resource type="Resource" uid="uid://5wgm7psssyu3" path="res://Assets/Items/ItemData/FryingPan.tres" id="5_c3das"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coxpv"]
+size = Vector2(535, 54)
+
+[node name="Testing" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 105)
+shape = SubResource("RectangleShape2D_coxpv")
+
+[node name="Basketball" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("2_10bbp")
+
+[node name="Basketball2" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("2_10bbp")
+
+[node name="Basketball3" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("2_10bbp")
+
+[node name="Basketball4" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("2_10bbp")
+
+[node name="FryingPan" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("5_c3das")
+
+[node name="Mouse" parent="." instance=ExtResource("3_diwf3")]

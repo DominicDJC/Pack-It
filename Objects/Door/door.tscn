@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drx4438edhw6u"]
+
+[ext_resource type="Texture2D" uid="uid://csdcc0c0e0qv7" path="res://Assets/doorgrabber.png" id="1_xnqow"]
+[ext_resource type="Texture2D" uid="uid://gdg8vh611y0i" path="res://Assets/Doors/Sprites/WoodenOpenDoor.png" id="2_yh2pu"]
+
+[node name="Door" type="Node2D"]
+
+[node name="Grabber" type="Sprite2D" parent="."]
+texture = ExtResource("1_xnqow")
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 199)
+scale = Vector2(6.38095, 6.38095)
+texture = ExtResource("2_yh2pu")

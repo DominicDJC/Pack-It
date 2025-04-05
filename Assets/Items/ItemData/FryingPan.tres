@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://5wgm7psssyu3"]
+
+[ext_resource type="Shape2D" uid="uid://brtcihn62rfg5" path="res://Assets/Items/Hitboxes/FryingPan.tres" id="1_4f3nv"]
+[ext_resource type="Script" uid="uid://d2ydep5hg40je" path="res://Objects/item_data.gd" id="1_l1hxj"]
+[ext_resource type="Texture2D" uid="uid://ja8ijxamqchi" path="res://Assets/Items/Sprites/FryingPan.png" id="3_jgcwh"]
+
+[resource]
+script = ExtResource("1_l1hxj")
+texture = ExtResource("3_jgcwh")
+hitbox = ExtResource("1_4f3nv")
+custom_size = 3.0
+mass = 7.5
+metadata/_custom_type_script = "uid://d2ydep5hg40je"

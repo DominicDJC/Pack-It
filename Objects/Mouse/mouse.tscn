@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbsnx3cr0lg6h"]
+
+[ext_resource type="Script" uid="uid://cjahrb7ye1am6" path="res://Objects/Mouse/mouse.gd" id="1_30ush"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydvoc"]
+radius = 3.0
+
+[node name="Mouse" type="Node2D"]
+script = ExtResource("1_30ush")
+
+[node name="InvisiblePoint" type="StaticBody2D" parent="."]
+
+[node name="PinJoint" type="PinJoint2D" parent="."]
+node_b = NodePath("../InvisiblePoint")
+softness = 2.5
+
+[node name="MouseSensor" type="Area2D" parent="."]
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="MouseSensor"]
+shape = SubResource("CircleShape2D_ydvoc")
+
+[connection signal="body_entered" from="MouseSensor" to="." method="_on_mouse_sensor_body_entered"]
+[connection signal="body_exited" from="MouseSensor" to="." method="_on_mouse_sensor_body_exited"]

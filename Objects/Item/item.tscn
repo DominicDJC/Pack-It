@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ygohw6bucf0"]
+
+[ext_resource type="Script" uid="uid://brr4c7v5iay8o" path="res://Objects/Item/item.gd" id="1_gmsd4"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_gmsd4")
+
+[node name="ItemCollision" type="CollisionShape2D" parent="."]
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
