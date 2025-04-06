@@ -1,6 +1,11 @@
 class_name Item extends RigidBody2D
 
 
+func _ready() -> void:
+	set_collision_layer_value(3, true)
+	set_collision_mask_value(3, true)
+
+
 func _process(delta: float) -> void:
 	if position.y > 3000:
 		get_parent().remove_child(self)
