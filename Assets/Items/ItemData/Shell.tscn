@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctrtx4npwjt4a"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_c0nl8"]
+[ext_resource type="Texture2D" uid="uid://c2rg0avm0x38b" path="res://Assets/Items/Sprites/Shell.png" id="2_ms8xn"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_c0nl8")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_ms8xn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.33, 0.33)
+polygon = PackedVector2Array(-19, 37, -22, 33, -28, 26, -37, 21, -40, 17, -41, 9, -43, -5, -35, -23, -30, -28, -20, -34, -12, -36, -4, -36, 4, -35, 11, -31, 18, -25, 22, -18, 25, -19, 33, -33, 34, -36, 36, -35, 43, -19, 43, -10, 33, 19, 24, 24, 19, 29, 10, 37, 2, 35, -7, 35)

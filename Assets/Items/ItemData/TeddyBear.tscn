@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtod5ykvj2h7a"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_1y7vf"]
+[ext_resource type="Texture2D" uid="uid://byyxwmnp8b0wn" path="res://Assets/Items/Sprites/TeddyBear.png" id="2_ebaym"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_1y7vf")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_ebaym")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-17, -13, -20, -16, -20, -40, -28, -46, -28, -53, -22, -59, -13, -59, -7, -50, 11, -50, 17, -58, 26, -58, 31, -53, 31, -47, 23, -40, 22, -17, 20, -14, 25, -11, 31, -4, 31, 7, 29, 11, 25, 10, 23, 13, 23, 23, 17, 28, 13, 28, 8, 23, -5, 23, -10, 29, -14, 29, -20, 23, -20, 13, -22, 10, -26, 10, -29, 7, -29, -5, -23, -11)

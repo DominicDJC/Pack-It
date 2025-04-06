@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3qs67j74u1xw"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_imfgo"]
+[ext_resource type="Texture2D" uid="uid://d3mj6wgbg3pk8" path="res://Assets/Items/Sprites/Bowl.png" id="2_yubnb"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_imfgo")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_yubnb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -5, -13, -6, -1, -7, 12, -6, 16, -5, 16, -4, 15, 1, 13, 5, 10, 9, 6, 11, 2, 12, -3, 12, -7, 11, -10, 8, -13, 5, -15, 1, -16, -2)

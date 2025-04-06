@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxv8mmfvgdcna"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_gd1vo"]
+[ext_resource type="Texture2D" uid="uid://bq54t7l6nhdjx" path="res://Assets/Items/Sprites/WaterBottle.png" id="2_xr2p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc1mh"]
+size = Vector2(16, 42)
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_gd1vo")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_xr2p8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_oc1mh")

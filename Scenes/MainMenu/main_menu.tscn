@@ -1,50 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://jycj37sh0sja"]
+[gd_scene load_steps=10 format=3 uid="uid://jycj37sh0sja"]
 
 [ext_resource type="Script" uid="uid://lll31ymqmvla" path="res://Scenes/MainMenu/main_menu.gd" id="1_uqdog"]
 [ext_resource type="Texture2D" uid="uid://dsig4yml3rhob" path="res://Assets/Menu Buttons/Field.png" id="2_w5buf"]
 [ext_resource type="Script" uid="uid://3jrn3untrdnn" path="res://Scenes/MainMenu/panel.gd" id="3_omq0y"]
 [ext_resource type="Texture2D" uid="uid://1a6jg406h0t1" path="res://Assets/Menu Buttons/PlayButton.png" id="4_6c6cs"]
 [ext_resource type="Script" uid="uid://ikwoqyqbt46o" path="res://Scenes/MainMenu/play.gd" id="5_agesy"]
-[ext_resource type="PackedScene" uid="uid://5ygohw6bucf0" path="res://Objects/Item/item.tscn" id="6_0l8wx"]
-[ext_resource type="Texture2D" uid="uid://coaqu4ffnprlg" path="res://Assets/Menu Buttons/SettingsButton1.png" id="7_fo6ee"]
-[ext_resource type="Script" uid="uid://b6c1qibpm7lch" path="res://Scenes/MainMenu/settings.gd" id="7_mdp32"]
-[ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="8_2r307"]
 [ext_resource type="Texture2D" uid="uid://dyhxbpakgbpon" path="res://Assets/Menu Buttons/QuitButton.png" id="9_nqd6t"]
 [ext_resource type="Script" uid="uid://cc18runuvtkj1" path="res://Scenes/MainMenu/exit.gd" id="9_rlg4b"]
-[ext_resource type="Texture2D" uid="uid://bm0p35vwaj7pg" path="res://Assets/Menu Buttons/GameTitle2.png" id="12_6c6cs"]
-[ext_resource type="Resource" uid="uid://dmk0pfr4v01de" path="res://Assets/Items/ItemData/Basketball.tres" id="12_fo6ee"]
-[ext_resource type="Resource" uid="uid://nlpomk0r30oq" path="res://Assets/Items/ItemData/WaterBottle.tres" id="13_nqd6t"]
-[ext_resource type="Resource" uid="uid://5wgm7psssyu3" path="res://Assets/Items/ItemData/FryingPan.tres" id="14_fo6ee"]
+[ext_resource type="Texture2D" uid="uid://leqr1jvy5bvb" path="res://Assets/Menu Buttons/TitleReal.png" id="11_mdp32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omq0y"]
 texture = ExtResource("2_w5buf")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_agesy"]
-size = Vector2(1252.5, 119)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6c6cs"]
-points = PackedVector2Array(-139.5, -53.5, -118.5, -74.5, 119.5, -74.5, 138.5, -53.5, 138.5, 55.5, 120.5, 73.5, -118.5, 74.5, -139.5, 54.5, -139.5, -52.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_w5buf"]
-radius = 75.0067
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6c6cs"]
-radius = 52.0865
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo6ee"]
-size = Vector2(202, 88)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nqd6t"]
-points = PackedVector2Array(-112, 78, -133, 57, -133, -52, -113, -73, -113, -113, -89, -152, -58, -183, -24, -183, 7, -112, 8, -73, 37, -73, 27, -112, 27, -132, 57, -133, 57, -153, 77, -153, 87, -133, 87, -123, 107, -123, 107, -114, 88, -113, 87, -83, 98, -72, 127, -72, 147, -52, 148, 58, 128, 78)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5buf"]
-size = Vector2(281, 104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xt57n"]
-size = Vector2(108, 103)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_43m2q"]
-points = PackedVector2Array(85.2729, -75.2561, -9.4234, -119.816, -99.5661, -67.4777, -96.2048, 51.479, -2.61761, 93.0776, 89.6336, 43.664)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -65,26 +31,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_omq0y")
 script = ExtResource("3_omq0y")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Panel"]
-
-[node name="Roof" type="CollisionShape2D" parent="Panel/StaticBody2D"]
-position = Vector2(586, -61)
-shape = SubResource("RectangleShape2D_agesy")
-
-[node name="Floor" type="CollisionShape2D" parent="Panel/StaticBody2D"]
-position = Vector2(586, 706)
-shape = SubResource("RectangleShape2D_agesy")
-
-[node name="Right Wall" type="CollisionShape2D" parent="Panel/StaticBody2D"]
-position = Vector2(-59, 299.25)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_agesy")
-
-[node name="Right Wall2" type="CollisionShape2D" parent="Panel/StaticBody2D"]
-position = Vector2(1213, 299.25)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_agesy")
-
 [node name="Play" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -92,58 +38,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -536.0
-offset_top = 148.0
-offset_right = -243.0
-offset_bottom = 297.0
+offset_left = -537.0
+offset_top = 120.0
+offset_right = -187.0
+offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("4_6c6cs")
 stretch_mode = 5
 script = ExtResource("5_agesy")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Play"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Play/StaticBody2D"]
-position = Vector2(146.5, 74.5)
-shape = SubResource("ConvexPolygonShape2D_6c6cs")
-
-[node name="Settings" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -266.0
-offset_top = 146.0
-offset_right = 267.0
-offset_bottom = 297.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-texture_normal = ExtResource("7_fo6ee")
-stretch_mode = 5
-script = ExtResource("7_mdp32")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Settings"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings/StaticBody2D"]
-position = Vector2(153, 78)
-shape = SubResource("CircleShape2D_w5buf")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Settings/StaticBody2D"]
-position = Vector2(384, 78)
-shape = SubResource("CircleShape2D_w5buf")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Settings/StaticBody2D"]
-position = Vector2(272, 78)
-shape = SubResource("CircleShape2D_6c6cs")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Settings/StaticBody2D"]
-position = Vector2(269, 80)
-shape = SubResource("RectangleShape2D_fo6ee")
 
 [node name="Exit" type="TextureButton" parent="."]
 layout_mode = 1
@@ -152,9 +56,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 164.0
-offset_top = 37.0
-offset_right = 602.0
+offset_left = 118.0
+offset_right = 618.0
 offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -163,58 +66,21 @@ texture_normal = ExtResource("9_nqd6t")
 stretch_mode = 5
 script = ExtResource("9_rlg4b")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Exit"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/StaticBody2D"]
-position = Vector2(212, 183)
-shape = SubResource("ConvexPolygonShape2D_nqd6t")
-
-[node name="Mouse + Interactives" type="Node" parent="."]
-
-[node name="Mouse" parent="Mouse + Interactives" instance=ExtResource("8_2r307")]
-position = Vector2(193, 367)
-
-[node name="Item2" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(548, 416)
-item_data = ExtResource("12_fo6ee")
-
-[node name="Item" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(132, 410)
-item_data = ExtResource("13_nqd6t")
-
-[node name="Item3" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(279, 418)
-item_data = ExtResource("14_fo6ee")
-
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -434.0
-offset_top = -50.0
-offset_right = 356.0
-offset_bottom = 354.0
+anchor_bottom = 1.0
+offset_left = -335.0
+offset_top = -143.0
+offset_right = 335.0
+offset_bottom = -143.0
 grow_horizontal = 2
-texture = ExtResource("12_6c6cs")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Title"]
-position = Vector2(186, 78)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Title/StaticBody2D"]
-position = Vector2(149.5, 73)
-shape = SubResource("RectangleShape2D_w5buf")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Title/StaticBody2D"]
-position = Vector2(149, 187.5)
-shape = SubResource("RectangleShape2D_xt57n")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Title/StaticBody2D"]
-position = Vector2(394.973, 111.919)
-rotation = 3.17824
-shape = SubResource("ConvexPolygonShape2D_43m2q")
+grow_vertical = 2
+texture = ExtResource("11_mdp32")
+stretch_mode = 5
 
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlbhqwuri123v"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_u03jy"]
+[ext_resource type="Texture2D" uid="uid://ja8ijxamqchi" path="res://Assets/Items/Sprites/FryingPan.png" id="2_vif63"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_u03jy")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_vif63")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -17, 20, -17, 27, -13, 31, -8, 31, 6, 27, 12, 19, 17, -2, 17, -14, 8, -14, 2, -29, 2, -31, -5, -17, -5, -12, -11)

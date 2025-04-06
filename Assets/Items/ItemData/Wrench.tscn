@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cosjlsy4x6svs"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_ikrdv"]
+[ext_resource type="Texture2D" uid="uid://cggt5x6i50l3i" path="res://Assets/Items/Sprites/Wrench.png" id="2_krawu"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_ikrdv")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_krawu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, 21, -28, 20, -25, 16, -23, 17, -22, 19, -22, 20, -25, 24, -25, 25, -23, 25, -18, 22, -17, 21, -16, 17, -14, 14, 20, -12, 23, -13, 28, -13, 30, -15, 31, -19, 31, -22, 27, -18, 25, -18, 23, -20, 26, -24, 26, -25, 22, -24, 20, -22, 19, -20, 18, -18, 17, -16, -16, 9, -18, 10, -22, 11, -24, 11, -27, 12, -29, 14, -30, 18, -30, 20)

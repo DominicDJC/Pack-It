@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2s1skj4iflpp"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_p1jit"]
+[ext_resource type="Texture2D" uid="uid://df785m2dxpfsk" path="res://Assets/Items/Sprites/Toothbrush.png" id="2_nq7fh"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_p1jit")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("2_nq7fh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(20, -19, 14, -25, 25, -38, 36, -27, 33, -23, 27, -18, 22, -14, 14, -10, 8, -8, 5, -3, 3, 4, -4, 11, -13, 20, -33, 41, -36, 42, -36, 40, -26, 29, -18, 20, -10, 13, -5, 8, 0, 2, 3, -6, 5, -10, 9, -13, 17, -16)
