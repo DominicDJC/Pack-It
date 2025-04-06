@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m6eex1rh4ni2"
-path="res://.godot/imported/PackIT.png-e1df1faba330c42c9e927c119e49ad40.ctex"
+uid="uid://bm0p35vwaj7pg"
+path="res://.godot/imported/GameTitle2.png-c09f1832db38c2e93d187dd3caf8e34e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu Buttons/PackIT.png"
-dest_files=["res://.godot/imported/PackIT.png-e1df1faba330c42c9e927c119e49ad40.ctex"]
+source_file="res://Assets/Menu Buttons/GameTitle2.png"
+dest_files=["res://.godot/imported/GameTitle2.png-c09f1832db38c2e93d187dd3caf8e34e.ctex"]
 
 [params]
 
