@@ -2,20 +2,36 @@ extends Node
 
 var root: Node2D
 
-var items: Array[ItemData] = []
+var items: Array[PackedScene] = []
+var scenes: Array[SceneData] = []
+var doors: Array[DoorData] = []
 
 const ITEMS_PATH = "res://Assets/Items/ItemData"
-const ITEM_OBJECT = preload("res://Objects/Item/item.tscn")
-
+const SCENE_PATH = "res://Assets/Scenes/SceneData"
+const DOOR_PATH = "res://Assets/Doors/DoorData"
+const BASKETBALL = preload("res://Assets/Items/ItemData/Basketball.tscn")
 func _ready() -> void:
 	randomize()
 	for file in ResourceLoader.list_directory(ITEMS_PATH):
-		var item: ItemData = ResourceLoader.load(ITEMS_PATH + "/" + file)
-		items.append(item)
+		var scene = load(ITEMS_PATH + "/" + file)
+		items.append(scene)
+	for file in ResourceLoader.list_directory(SCENE_PATH):
+		var scene: SceneData = ResourceLoader.load(SCENE_PATH + "/" + file)
+		scenes.append(scene)
+	for file in ResourceLoader.list_directory(DOOR_PATH):
+		var door: DoorData = ResourceLoader.load(DOOR_PATH + "/" + file)
+		doors.append(door)
 
 
 func get_item() -> Item:
-	var item: Item = ITEM_OBJECT.instantiate()
-	item.item_data = items[randi_range(0, items.size() - 1)]
+	var item: Item = items[randi_range(0, items.size() - 1)].instantiate()
 	root.add_child(item)
 	return item
+
+
+func get_scene() -> SceneData:
+	return scenes[randi_range(0, scenes.size() - 1)]
+
+
+func get_door() -> DoorData:
+	return doors[randi_range(0, doors.size() - 1)]

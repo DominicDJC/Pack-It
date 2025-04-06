@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpvyl2imoaad"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_ubou5"]
+[ext_resource type="Texture2D" uid="uid://cx02kll6cm3dd" path="res://Assets/Items/Sprites/Basketball.png" id="2_yulh6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijwft"]
+radius = 27.0
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_ubou5")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_yulh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ijwft")

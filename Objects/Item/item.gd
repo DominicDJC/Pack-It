@@ -1,14 +1,19 @@
 class_name Item extends RigidBody2D
 
-@export var item_data: ItemData
 
-@onready var item_sprite: Sprite2D = $ItemSprite
-@onready var item_collision: CollisionShape2D = $ItemCollision
+func _process(delta: float) -> void:
+	if position.y > 3000:
+		get_parent().remove_child(self)
+		self.queue_free()
 
 
-func _ready() -> void:
-	item_sprite.scale *= item_data.custom_size
-	item_collision.scale *= item_data.custom_size
-	item_sprite.texture = item_data.texture
-	item_collision.shape = item_data.hitbox
-	mass = item_data.mass
+func disable_collision() -> void:
+	for child in get_children():
+		if child is CollisionShape2D or child is CollisionPolygon2D:
+			child.disabled = true
+
+
+func enable_collision() -> void:
+	for child in get_children():
+		if child is CollisionShape2D or child is CollisionPolygon2D:
+			child.disabled = false

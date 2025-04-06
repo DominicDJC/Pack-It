@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqf5i8voa8yxh"
-path="res://.godot/imported/SmallOpenBox.png-6aec8c571f6052367e7d1f52ec02ead3.ctex"
+uid="uid://h5q8ccd8kn4y"
+path="res://.godot/imported/BossHead.png-12620e3dce6562b45e1371e2425d0735.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Boxes/Sprites/SmallOpenBox.png"
-dest_files=["res://.godot/imported/SmallOpenBox.png-6aec8c571f6052367e7d1f52ec02ead3.ctex"]
+source_file="res://Assets/Boss/BossHead.png"
+dest_files=["res://.godot/imported/BossHead.png-12620e3dce6562b45e1371e2425d0735.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

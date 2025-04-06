@@ -1,5 +1,9 @@
 class_name MainMenu extends Control
 
+@onready var door: Door = $Door
+@onready var target: Node2D = $Target
+
+
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/game.tscn")
 

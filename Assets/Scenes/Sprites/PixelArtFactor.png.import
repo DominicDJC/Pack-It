@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqf5i8voa8yxh"
-path="res://.godot/imported/SmallOpenBox.png-6aec8c571f6052367e7d1f52ec02ead3.ctex"
+uid="uid://cbqbtsen6euc0"
+path="res://.godot/imported/PixelArtFactor.png-f4de261d485995d7c98d446b723cc198.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Boxes/Sprites/SmallOpenBox.png"
-dest_files=["res://.godot/imported/SmallOpenBox.png-6aec8c571f6052367e7d1f52ec02ead3.ctex"]
+source_file="res://Assets/Scenes/Sprites/PixelArtFactor.png"
+dest_files=["res://.godot/imported/PixelArtFactor.png-f4de261d485995d7c98d446b723cc198.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SceneData" load_steps=4 format=3 uid="uid://ch7dolsd72myh"]
+
+[ext_resource type="Script" uid="uid://biu02qdd3jmhg" path="res://Objects/background_data.gd" id="1_5m308"]
+[ext_resource type="Texture2D" uid="uid://hr85xj0mt0ih" path="res://Assets/Scenes/Sprites/OfficeDude.png" id="1_m14a0"]
+[ext_resource type="Texture2D" uid="uid://i2eefemkxaqb" path="res://Assets/Scenes/Grounds/OfficeDesk.png" id="2_pk0tq"]
+
+[resource]
+script = ExtResource("1_5m308")
+background_texture = ExtResource("1_m14a0")
+background_offset = Vector2(0, 0)
+background_size = 1.0
+ground_texture = ExtResource("2_pk0tq")
+ground_offset = Vector2(0, 0)
+ground_size = 1.0
+metadata/_custom_type_script = "uid://biu02qdd3jmhg"

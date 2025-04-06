@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SceneData" load_steps=4 format=3 uid="uid://bhw8q5s8sahoa"]
+
+[ext_resource type="Script" uid="uid://biu02qdd3jmhg" path="res://Objects/background_data.gd" id="1_xpyn5"]
+[ext_resource type="Texture2D" uid="uid://s3ojaba2u7d3" path="res://Assets/Scenes/Sprites/Pink.png" id="1_xqtil"]
+[ext_resource type="Texture2D" uid="uid://ch65dhje2wxpg" path="res://Assets/Scenes/Grounds/Ground1.png" id="2_bo4m6"]
+
+[resource]
+script = ExtResource("1_xpyn5")
+background_texture = ExtResource("1_xqtil")
+background_offset = Vector2(0, 0)
+background_size = 2.3
+ground_texture = ExtResource("2_bo4m6")
+ground_offset = Vector2(0, 0)
+ground_size = 2.3
+metadata/_custom_type_script = "uid://biu02qdd3jmhg"

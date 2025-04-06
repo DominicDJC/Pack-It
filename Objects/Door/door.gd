@@ -1,29 +1,32 @@
 class_name Door extends Node2D
 
 @export var target: Node2D
-@export var door_data: DoorData
 
 @onready var door_pin_point: StaticBody2D = $DoorPinPoint
 @onready var door_frame: RigidBody2D = $DoorFrame
 @onready var door_frame_hitbox: CollisionShape2D = $DoorFrame/DoorFrameHitbox
 @onready var item_pin: PinJoint2D = $DoorFrame/ItemPin
 @onready var door_sprite: Sprite2D = $DoorFrame/DoorSprite
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const ITEM = preload("res://Objects/Item/item.tscn")
 
 var _current_item: Item
 var opened: bool = false
+var door_data: DoorData
 
 
 func _ready() -> void:
+	door_data = LOADER.get_door()
 	door_sprite.scale *= door_data.custom_size
 	door_sprite.texture = door_data.closed_texture
-	disable_collision()
 	var item: Item = LOADER.get_item()
 	item.global_position = item_pin.global_position
 	item_pin.node_a = item.get_path()
 	item.visible = false
+	item.disable_collision()
 	_current_item = item
+	disable_collision()
 
 
 func _process(delta: float) -> void:
@@ -41,9 +44,11 @@ func enable_collision() -> void:
 
 
 func open_door() -> void:
+	audio_stream_player_2d.play()
 	door_sprite.texture = door_data.open_texture
 	item_pin.node_a = NodePath("")
 	_current_item.visible = true
+	_current_item.enable_collision()
 	opened = true
 
 
@@ -58,5 +63,4 @@ func _on_click_area_mouse_exited() -> void:
 func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			print("Door clicked")
 			open_door()

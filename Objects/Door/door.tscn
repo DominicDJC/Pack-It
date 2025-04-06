@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://drx4438edhw6u"]
+[gd_scene load_steps=6 format=3 uid="uid://drx4438edhw6u"]
 
 [ext_resource type="Texture2D" uid="uid://csdcc0c0e0qv7" path="res://Assets/doorgrabber.png" id="1_xnqow"]
 [ext_resource type="Script" uid="uid://dj23q6mkksshb" path="res://Objects/Door/door.gd" id="1_yh2pu"]
+[ext_resource type="AudioStream" uid="uid://dycqxh6x0fdag" path="res://Assets/SFX/door.mp3" id="3_yh2pu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2pu"]
 size = Vector2(66, 168)
@@ -49,6 +50,10 @@ node_b = NodePath("../ItemPinPoint")
 
 [node name="ItemPinPoint" type="StaticBody2D" parent="DoorFrame"]
 position = Vector2(0, 100)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yh2pu")
+volume_db = -5.0
 
 [connection signal="input_event" from="DoorFrame/ClickArea" to="." method="_on_click_area_input_event"]
 [connection signal="mouse_entered" from="DoorFrame/ClickArea" to="." method="_on_click_area_mouse_entered"]

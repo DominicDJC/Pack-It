@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://blnm58vgaaxou"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_kf0vr"]
+[ext_resource type="Texture2D" uid="uid://dcctnuaacy3uw" path="res://Assets/Items/Sprites/Rod.png" id="2_4u2oj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_se3od"]
+radius = 7.0
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_kf0vr")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.146, 0.146)
+texture = ExtResource("2_4u2oj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.225805, -0.218187)
+scale = Vector2(0.146628, 0.146411)
+polygon = PackedVector2Array(-338, 378, -355, 378, -363, 369, -363, 356, -341.088, 320.018, -268, 200, -130, -25, -9, -191, 80, -278, 156, -341, 269, -408, 319, -416, 203, -361, 102, -284, 23, -203, -43, -124, -93, -52, -161, 50, -217, 151, -217, 162, -206, 169, -189, 199, -180, 194, -186, 187, -177, 170, -181, 163, -168, 141, -153, 148, -146, 141, -131, 150, -132, 157, -130, 163, -135, 167, -116, 178, -152, 208, -154, 227, -159, 222, -171, 238, -168, 274, -181, 274, -178, 260, -181, 242, -187, 242, -192, 224, -212, 184, -229, 187, -323, 363)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 27)
+shape = SubResource("CircleShape2D_se3od")
