@@ -1,14 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://drx4438edhw6u"]
+[gd_scene load_steps=5 format=3 uid="uid://drx4438edhw6u"]
 
 [ext_resource type="Texture2D" uid="uid://csdcc0c0e0qv7" path="res://Assets/doorgrabber.png" id="1_xnqow"]
-[ext_resource type="Texture2D" uid="uid://gdg8vh611y0i" path="res://Assets/Doors/Sprites/WoodenOpenDoor.png" id="2_yh2pu"]
+[ext_resource type="Script" uid="uid://dj23q6mkksshb" path="res://Objects/Door/door.gd" id="1_yh2pu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2pu"]
+size = Vector2(66, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c24xa"]
+size = Vector2(60, 124)
 
 [node name="Door" type="Node2D"]
+script = ExtResource("1_yh2pu")
 
-[node name="Grabber" type="Sprite2D" parent="."]
+[node name="DoorPin" type="PinJoint2D" parent="."]
+node_a = NodePath("../DoorPinPoint")
+node_b = NodePath("../DoorFrame")
+
+[node name="DoorPinPoint" type="StaticBody2D" parent="."]
+
+[node name="DoorFrame" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+mass = 500.0
+angular_damp = 5.0
+
+[node name="Grabber" type="Sprite2D" parent="DoorFrame"]
+position = Vector2(0, 56)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_xnqow")
 
-[node name="DoorSprite" type="Sprite2D" parent="."]
-position = Vector2(0, 199)
-scale = Vector2(6.38095, 6.38095)
-texture = ExtResource("2_yh2pu")
+[node name="DoorSprite" type="Sprite2D" parent="DoorFrame"]
+position = Vector2(0, 106)
+
+[node name="DoorFrameHitbox" type="CollisionShape2D" parent="DoorFrame"]
+position = Vector2(0, 86)
+shape = SubResource("RectangleShape2D_yh2pu")
+
+[node name="ClickArea" type="Area2D" parent="DoorFrame"]
+
+[node name="ClickBox" type="CollisionShape2D" parent="DoorFrame/ClickArea"]
+position = Vector2(0, 106)
+shape = SubResource("RectangleShape2D_c24xa")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="ItemPin" type="PinJoint2D" parent="DoorFrame"]
+position = Vector2(0, 100)
+node_b = NodePath("../ItemPinPoint")
+
+[node name="ItemPinPoint" type="StaticBody2D" parent="DoorFrame"]
+position = Vector2(0, 100)
+
+[connection signal="input_event" from="DoorFrame/ClickArea" to="." method="_on_click_area_input_event"]
+[connection signal="mouse_entered" from="DoorFrame/ClickArea" to="." method="_on_click_area_mouse_entered"]
+[connection signal="mouse_exited" from="DoorFrame/ClickArea" to="." method="_on_click_area_mouse_exited"]

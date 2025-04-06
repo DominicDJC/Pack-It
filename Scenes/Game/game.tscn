@@ -1,13 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcethyc00kgtk"]
+[gd_scene load_steps=11 format=3 uid="uid://dcethyc00kgtk"]
 
-[ext_resource type="PackedScene" uid="uid://bo1yf31py86l0" path="res://Objects/Background/background.tscn" id="1_mv0hc"]
 [ext_resource type="Script" uid="uid://c3d3xgyqqoq23" path="res://Scenes/Game/game.gd" id="1_qxfds"]
-[ext_resource type="Resource" uid="uid://d02g1oanlda6l" path="res://Assets/Backgrounds/BackgroundData/PixelArtFactor.tres" id="2_qikps"]
+[ext_resource type="Texture2D" uid="uid://cndch70sadxup" path="res://Assets/Backgrounds/Sprites/FieldImage.png" id="3_xfil1"]
+[ext_resource type="Texture2D" uid="uid://jerdjyopcx4c" path="res://Assets/Rail.png" id="4_ciybh"]
+[ext_resource type="Texture2D" uid="uid://v38v3bybtx7j" path="res://Assets/PicnicTable.png" id="4_vifcx"]
+[ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="6_flgk0"]
+[ext_resource type="PackedScene" uid="uid://20rhs400rq11" path="res://Assets/Boxes/Boxes/small_open_box.tscn" id="6_vifcx"]
+[ext_resource type="FontFile" uid="uid://btes0083gqc0g" path="res://Assets/Fonts/Wariowareinc-BWWdn.ttf" id="7_vifcx"]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ciybh"]
+size = Vector2(13684, 3627)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flgk0"]
+size = Vector2(6282.5, 10216)
+
+[sub_resource type="Theme" id="Theme_xfil1"]
+Label/fonts/font = ExtResource("7_vifcx")
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("timer_label", "items_label", "box")]
 script = ExtResource("1_qxfds")
-background_data = ExtResource("2_qikps")
+timer_label = NodePath("GameUI/Timer")
+items_label = NodePath("GameUI/Items")
+box = NodePath("SmallOpenBox")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, -36)
+texture = ExtResource("3_xfil1")
+
+[node name="Ground" type="Sprite2D" parent="."]
+scale = Vector2(1.00234, 0.984722)
+texture = ExtResource("4_vifcx")
+
+[node name="Rail" type="Sprite2D" parent="."]
+position = Vector2(0, -135)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ciybh")
+
+[node name="Border" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, 2056.5)
+shape = SubResource("RectangleShape2D_ciybh")
+
+[node name="Wall" type="CollisionShape2D" parent="Border"]
+position = Vector2(-3728.25, -1235)
+shape = SubResource("RectangleShape2D_flgk0")
+
+[node name="Floor2" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, -4530)
+shape = SubResource("RectangleShape2D_ciybh")
+
+[node name="Wall2" type="CollisionShape2D" parent="Border"]
+position = Vector2(3725.5, -1227.5)
+shape = SubResource("RectangleShape2D_flgk0")
+
+[node name="Mouse" parent="." instance=ExtResource("6_flgk0")]
+
+[node name="SmallOpenBox" parent="." instance=ExtResource("6_vifcx")]
+position = Vector2(0, 243)
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+
+[node name="Timer" type="Label" parent="GameUI"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 981.0
+offset_top = 20.0
+offset_right = -18.0
+offset_bottom = -564.0
+size_flags_vertical = 1
+theme = SubResource("Theme_xfil1")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "60.00"
+
+[node name="Items" type="Label" parent="GameUI"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 748.0
+offset_top = 499.0
+offset_right = -247.0
+offset_bottom = -85.0
+size_flags_vertical = 1
+theme = SubResource("Theme_xfil1")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "0 items"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Background" parent="." instance=ExtResource("1_mv0hc")]
