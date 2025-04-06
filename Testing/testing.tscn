@@ -9,9 +9,10 @@ size = Vector2(1154.5, 173)
 
 [node name="Testing" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7yjmd")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1.25, 236)

@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmr1uoewme60l"]
+
+[ext_resource type="Script" uid="uid://dql2xmc0eff8g" path="res://Objects/DoorGroup/door_group.gd" id="1_fnq5e"]
+[ext_resource type="PackedScene" uid="uid://drx4438edhw6u" path="res://Objects/Door/door.tscn" id="2_b8x6o"]
+[ext_resource type="Resource" uid="uid://giyvni3napl7" path="res://Assets/Doors/DoorData/WoodenDoor.tres" id="3_b8x6o"]
+
+[sub_resource type="Animation" id="Animation_uupaj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorOnePoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1000, -235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorTwoPoint:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-850, -235)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorThreePoint:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-700, -235)]
+}
+
+[sub_resource type="Animation" id="Animation_rf53h"]
+resource_name = "leavedoors"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorOnePoint:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, -235), Vector2(700, -235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorTwoPoint:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 1.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -235), Vector2(850, -235)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorThreePoint:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150, -235), Vector2(1000, -235)]
+}
+
+[sub_resource type="Animation" id="Animation_7021t"]
+resource_name = "spawndoors"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorOnePoint:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1000, -235), Vector2(-150, -235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorTwoPoint:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 1.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-850, -235), Vector2(0, -235)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorThreePoint:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-700, -235), Vector2(150, -235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rf53h"]
+_data = {
+&"RESET": SubResource("Animation_uupaj"),
+&"leavedoors": SubResource("Animation_rf53h"),
+&"spawndoors": SubResource("Animation_7021t")
+}
+
+[node name="DoorGroup" type="Node2D"]
+script = ExtResource("1_fnq5e")
+
+[node name="DoorOnePoint" type="Node2D" parent="."]
+position = Vector2(-1000, -235)
+
+[node name="DoorTwoPoint" type="Node2D" parent="."]
+position = Vector2(-850, -235)
+
+[node name="DoorThreePoint" type="Node2D" parent="."]
+position = Vector2(-700, -235)
+
+[node name="DoorOne" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_b8x6o")]
+target = NodePath("../DoorOnePoint")
+door_data = ExtResource("3_b8x6o")
+
+[node name="DoorTwo" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_b8x6o")]
+target = NodePath("../DoorTwoPoint")
+door_data = ExtResource("3_b8x6o")
+
+[node name="DoorThree" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_b8x6o")]
+target = NodePath("../DoorThreePoint")
+door_data = ExtResource("3_b8x6o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rf53h")
+}
