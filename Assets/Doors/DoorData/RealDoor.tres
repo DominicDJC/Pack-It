@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DoorData" load_steps=4 format=3 uid="uid://c6v8wv8bij7ng"]
+
+[ext_resource type="Script" uid="uid://bcljpd4njvps1" path="res://Objects/door_data.gd" id="1_dpikj"]
+[ext_resource type="Texture2D" uid="uid://8ahfo0ht8xfd" path="res://Assets/Doors/Sprites/RealDoor.png" id="1_geket"]
+[ext_resource type="Texture2D" uid="uid://cd7acqmdqsx6f" path="res://Assets/Doors/Sprites/RealDoorOpen.png" id="2_vrku4"]
+
+[resource]
+script = ExtResource("1_dpikj")
+closed_texture = ExtResource("1_geket")
+open_texture = ExtResource("2_vrku4")
+custom_size = 0.4
+offset = -3
+metadata/_custom_type_script = "uid://bcljpd4njvps1"

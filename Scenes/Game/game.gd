@@ -2,15 +2,23 @@ class_name Game extends Node2D
 
 @export var timer_label: Label
 @export var items_label: Label
-@export var box: Box
 @export var boss: Boss
 
 @onready var animation_player: AnimationPlayer = $GameUI/AnimationPlayer
 @onready var rail_container: Node2D = $RailContainer
 @onready var background: Sprite2D = $Background
 @onready var ground: Sprite2D = $BoxContainer/Ground
+@onready var box_container: Node2D = $BoxContainer
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+const MUSIC_1 = preload("res://Assets/Music/music1.mp3")
+const MUSIC_2 = preload("res://Assets/Music/music2.mp3")
+const MUSIC_3 = preload("res://Assets/Music/music3.mp3")
+const MUSIC_4 = preload("res://Assets/Music/music4.mp3")
+const MUSIC_5 = preload("res://Assets/Music/music5.mp3")
 
 
+var box: Box
 var playing: bool = false
 var time: float = 0.0
 var last_liner: int = 0.0
@@ -21,6 +29,9 @@ const ROUND_TIME = 60
 
 
 func _ready() -> void:
+	var tracks = [MUSIC_1, MUSIC_2, MUSIC_3, MUSIC_4, MUSIC_5]
+	audio_stream_player_2d.stream = tracks[randi_range(0, tracks.size() - 1)]
+	audio_stream_player_2d.play()
 	LOADER.root = self
 	var scene_data: SceneData = LOADER.get_scene()
 	background.texture = scene_data.background_texture
@@ -29,6 +40,9 @@ func _ready() -> void:
 	ground.texture = scene_data.ground_texture
 	ground.scale *= scene_data.ground_size
 	ground.position += scene_data.ground_offset
+	box = LOADER.get_box()
+	box_container.add_child(box)
+	box.position.y = 243
 	box.item_entered.connect(increase_counter)
 	box.item_exited.connect(decrease_counter)
 	animation_player.play("Open")

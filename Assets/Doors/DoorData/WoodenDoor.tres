@@ -9,4 +9,5 @@ script = ExtResource("3_j6em4")
 closed_texture = ExtResource("1_flvt1")
 open_texture = ExtResource("2_khpio")
 custom_size = 1.595
+offset = -1
 metadata/_custom_type_script = "uid://bcljpd4njvps1"

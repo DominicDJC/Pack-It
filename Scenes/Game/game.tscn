@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcethyc00kgtk"]
+[gd_scene load_steps=14 format=3 uid="uid://dcethyc00kgtk"]
 
 [ext_resource type="Script" uid="uid://c3d3xgyqqoq23" path="res://Scenes/Game/game.gd" id="1_qxfds"]
 [ext_resource type="Texture2D" uid="uid://jerdjyopcx4c" path="res://Assets/Rail.png" id="4_ciybh"]
 [ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="6_flgk0"]
-[ext_resource type="PackedScene" uid="uid://20rhs400rq11" path="res://Assets/Boxes/Boxes/small_open_box.tscn" id="6_vifcx"]
 [ext_resource type="FontFile" uid="uid://btes0083gqc0g" path="res://Assets/Fonts/Wariowareinc-BWWdn.ttf" id="7_vifcx"]
 [ext_resource type="PackedScene" uid="uid://bpqoky50hdwxl" path="res://Objects/Boss/boss.tscn" id="8_7jvlm"]
 
@@ -284,11 +283,10 @@ _data = {
 &"Results": SubResource("Animation_huoen")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("timer_label", "items_label", "box", "boss")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("timer_label", "items_label", "boss")]
 script = ExtResource("1_qxfds")
 timer_label = NodePath("GameUI/Timer")
 items_label = NodePath("GameUI/Items")
-box = NodePath("BoxContainer/SmallOpenBox")
 boss = NodePath("Boss")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -296,9 +294,6 @@ boss = NodePath("Boss")
 [node name="BoxContainer" type="Node2D" parent="."]
 
 [node name="Ground" type="Sprite2D" parent="BoxContainer"]
-
-[node name="SmallOpenBox" parent="BoxContainer" instance=ExtResource("6_vifcx")]
-position = Vector2(0, 243)
 
 [node name="GroundStatic" type="StaticBody2D" parent="BoxContainer"]
 
@@ -369,3 +364,6 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0

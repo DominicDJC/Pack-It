@@ -20,6 +20,7 @@ func _ready() -> void:
 	door_data = LOADER.get_door()
 	door_sprite.scale *= door_data.custom_size
 	door_sprite.texture = door_data.closed_texture
+	door_sprite.position.y += door_data.offset
 	var item: Item = LOADER.get_item()
 	item.global_position = item_pin.global_position
 	item_pin.node_a = item.get_path()
@@ -62,5 +63,5 @@ func _on_click_area_mouse_exited() -> void:
 
 func _on_click_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and !opened:
 			open_door()
