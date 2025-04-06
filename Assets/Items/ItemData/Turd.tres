@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://d2s07yd8rf4su"]
+
+[ext_resource type="Script" uid="uid://d2ydep5hg40je" path="res://Objects/item_data.gd" id="1_3yw1v"]
+[ext_resource type="Shape2D" uid="uid://bwhrvqv2bjwwq" path="res://Assets/Items/Hitboxes/Turd.tres" id="1_t2b3a"]
+[ext_resource type="Texture2D" uid="uid://cq7cm5ejcwtdu" path="res://Assets/Items/Sprites/Turd.png" id="3_qtc6f"]
+
+[resource]
+script = ExtResource("1_3yw1v")
+texture = ExtResource("3_qtc6f")
+hitbox = ExtResource("1_t2b3a")
+custom_size = 3.0
+mass = 1.0
+metadata/_custom_type_script = "uid://d2ydep5hg40je"

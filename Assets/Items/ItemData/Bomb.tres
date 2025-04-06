@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dcbd2wi4xexu2"]
+
+[ext_resource type="Script" uid="uid://d2ydep5hg40je" path="res://Objects/item_data.gd" id="1_j33ij"]
+[ext_resource type="Shape2D" uid="uid://cgr367mbox0nv" path="res://Assets/Items/Hitboxes/Bomb.tres" id="1_yjyne"]
+[ext_resource type="Texture2D" uid="uid://chhwtswmxgyn" path="res://Assets/Items/Sprites/Bomb.png" id="3_0tu4j"]
+
+[resource]
+script = ExtResource("1_j33ij")
+texture = ExtResource("3_0tu4j")
+hitbox = ExtResource("1_yjyne")
+custom_size = 3.0
+mass = 1.0
+metadata/_custom_type_script = "uid://d2ydep5hg40je"

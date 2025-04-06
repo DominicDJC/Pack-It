@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bodnf7i1333el"]
+
+[ext_resource type="Script" uid="uid://d2ydep5hg40je" path="res://Objects/item_data.gd" id="1_mstec"]
+[ext_resource type="Shape2D" uid="uid://bpf1uttfgs25k" path="res://Assets/Items/Hitboxes/Stapler.tres" id="1_nupdj"]
+[ext_resource type="Texture2D" uid="uid://qc3pavw4fuku" path="res://Assets/Items/Sprites/Stapler.png" id="3_qkkxh"]
+
+[resource]
+script = ExtResource("1_mstec")
+texture = ExtResource("3_qkkxh")
+hitbox = ExtResource("1_nupdj")
+custom_size = 2.0
+mass = 1.0
+metadata/_custom_type_script = "uid://d2ydep5hg40je"

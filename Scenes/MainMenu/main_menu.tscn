@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://jycj37sh0sja"]
+[gd_scene load_steps=18 format=3 uid="uid://jycj37sh0sja"]
 
 [ext_resource type="Script" uid="uid://lll31ymqmvla" path="res://Scenes/MainMenu/main_menu.gd" id="1_uqdog"]
+[ext_resource type="Texture2D" uid="uid://cbqbtsen6euc0" path="res://Assets/Backgrounds/Sprites/PixelArtFactor.png" id="2_adu2g"]
+[ext_resource type="Script" uid="uid://3jrn3untrdnn" path="res://Scenes/MainMenu/panel.gd" id="3_omq0y"]
+[ext_resource type="Script" uid="uid://ikwoqyqbt46o" path="res://Scenes/MainMenu/play.gd" id="5_agesy"]
+[ext_resource type="Texture2D" uid="uid://dxamdx5erkmw1" path="res://Assets/Menu Buttons/PlayButton alt.png" id="5_w5buf"]
+[ext_resource type="PackedScene" uid="uid://5ygohw6bucf0" path="res://Objects/Item/item.tscn" id="6_0l8wx"]
+[ext_resource type="Texture2D" uid="uid://ckdns2j165630" path="res://Assets/Menu Buttons/SettingsButtonNew.png" id="6_rlg4b"]
+[ext_resource type="Script" uid="uid://b6c1qibpm7lch" path="res://Scenes/MainMenu/settings.gd" id="7_mdp32"]
+[ext_resource type="Resource" uid="uid://dmk0pfr4v01de" path="res://Assets/Items/ItemData/Basketball.tres" id="7_n5jej"]
+[ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="8_2r307"]
+[ext_resource type="Texture2D" uid="uid://bfsefadqd8i4f" path="res://Assets/Menu Buttons/QuitButtonNew.png" id="8_w5buf"]
+[ext_resource type="Script" uid="uid://cc18runuvtkj1" path="res://Scenes/MainMenu/exit.gd" id="9_rlg4b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omq0y"]
+texture = ExtResource("2_adu2g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agesy"]
+size = Vector2(1307, 119)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6c6cs"]
+points = PackedVector2Array(-139.5, -53.5, -118.5, -74.5, 119.5, -74.5, 138.5, -53.5, 138.5, 55.5, 119.5, 74.5, -118.5, 74.5, -139.5, 54.5, -139.5, -52.5)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fo6ee"]
+points = PackedVector2Array(-4, -36, 21, -44, 42, -44, 65, -36, 82, -44, 91, -52, 106, -52, 130, -68, 153, -68, 162, -60, 178, -52, 193, -52, 201, -44, 217, -4, 217, 20, 209, 28, 201, 59, 178, 67, 154, 84, 130, 84, 106, 67, 91, 67, 67, 51, 43, 60, 19, 60, -13, 43, -37, 67, -69, 75, -77, 83, -100, 83, -125, 67, -140, 67, -148, 43, -164, 19, -164, -4, -148, -29, -148, -44, -140, -52, -124, -52, -100, -68, -77, -68, -52, -52, -37, -52, -29, -44)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nqd6t"]
+points = PackedVector2Array(-112, 78, -133, 57, -133, -52, -113, -73, -113, -113, -89, -152, -58, -183, -24, -183, 7, -112, 8, -73, 37, -73, 27, -112, 27, -132, 57, -133, 57, -153, 77, -153, 87, -133, 87, -123, 107, -123, 107, -114, 88, -113, 87, -83, 98, -72, 127, -72, 147, -52, 148, 58, 128, 78)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,3 +36,105 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uqdog")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_omq0y")
+script = ExtResource("3_omq0y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/StaticBody2D"]
+position = Vector2(586, -61)
+shape = SubResource("RectangleShape2D_agesy")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -536.0
+offset_top = 148.0
+offset_right = -243.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("5_w5buf")
+stretch_mode = 5
+script = ExtResource("5_agesy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Play"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play/StaticBody2D"]
+position = Vector2(146.5, 74.5)
+shape = SubResource("ConvexPolygonShape2D_6c6cs")
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = 146.0
+offset_right = 267.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("6_rlg4b")
+stretch_mode = 5
+script = ExtResource("7_mdp32")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Settings"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings/StaticBody2D"]
+position = Vector2(240, 68)
+shape = SubResource("ConvexPolygonShape2D_fo6ee")
+
+[node name="Exit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = 37.0
+offset_right = 602.0
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("8_w5buf")
+stretch_mode = 5
+script = ExtResource("9_rlg4b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Exit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/StaticBody2D"]
+position = Vector2(212, 183)
+shape = SubResource("ConvexPolygonShape2D_nqd6t")
+
+[node name="Mouse + Interactives" type="Node" parent="."]
+
+[node name="Mouse" parent="Mouse + Interactives" instance=ExtResource("8_2r307")]
+position = Vector2(193, 367)
+
+[node name="Item" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
+position = Vector2(181, 301)
+item_data = ExtResource("7_n5jej")
+
+[connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

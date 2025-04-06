@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b1skjrkno03i"]
+
+[ext_resource type="Shape2D" uid="uid://d2dtaaqult86o" path="res://Assets/Items/Hitboxes/FireE.tres" id="1_a5w1d"]
+[ext_resource type="Script" uid="uid://d2ydep5hg40je" path="res://Objects/item_data.gd" id="1_gtwqg"]
+[ext_resource type="Texture2D" uid="uid://bpbebchwt355r" path="res://Assets/Items/Sprites/FireE.png" id="3_4kor8"]
+
+[resource]
+script = ExtResource("1_gtwqg")
+texture = ExtResource("3_4kor8")
+hitbox = ExtResource("1_a5w1d")
+custom_size = 0.25
+mass = 1.0
+metadata/_custom_type_script = "uid://d2ydep5hg40je"
