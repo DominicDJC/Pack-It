@@ -175,15 +175,15 @@ shape = SubResource("ConvexPolygonShape2D_nqd6t")
 position = Vector2(193, 367)
 
 [node name="Item2" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(178, 281)
+position = Vector2(548, 416)
 item_data = ExtResource("12_fo6ee")
 
 [node name="Item" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(573, 426)
+position = Vector2(132, 410)
 item_data = ExtResource("13_nqd6t")
 
 [node name="Item3" parent="Mouse + Interactives" instance=ExtResource("6_0l8wx")]
-position = Vector2(973, 331)
+position = Vector2(279, 418)
 item_data = ExtResource("14_fo6ee")
 
 [node name="Title" type="TextureRect" parent="."]
