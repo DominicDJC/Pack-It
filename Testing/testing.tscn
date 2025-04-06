@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c73jm8j0eu1pv"]
+[gd_scene load_steps=5 format=3 uid="uid://c73jm8j0eu1pv"]
 
-[ext_resource type="Texture2D" uid="uid://ja8ijxamqchi" path="res://Assets/Items/Sprites/FryingPan.png" id="1_7yjmd"]
+[ext_resource type="PackedScene" uid="uid://5ygohw6bucf0" path="res://Objects/Item/item.tscn" id="1_diwf3"]
+[ext_resource type="PackedScene" uid="uid://cbsnx3cr0lg6h" path="res://Objects/Mouse/mouse.tscn" id="3_diwf3"]
+[ext_resource type="Resource" uid="uid://wluyx4qgy7ch" path="res://Assets/Items/ItemData/Toothbrush.tres" id="5_a23fp"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_10bbp"]
-points = PackedVector2Array(-15, 6, -21, 6, -24, 5, -25, 1, -31, 1, -31, 0, -25, 0, -24, -2, -21, -4, -14, -4, -11, -2, -11, 4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coxpv"]
+size = Vector2(1154.5, 173)
 
 [node name="Testing" type="Node2D"]
 
@@ -12,6 +14,11 @@ texture = ExtResource("1_7yjmd")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(21, -1)
-shape = SubResource("ConvexPolygonShape2D_10bbp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.25, 236)
+shape = SubResource("RectangleShape2D_coxpv")
+
+[node name="Mouse" parent="." instance=ExtResource("3_diwf3")]
+
+[node name="Item" parent="." instance=ExtResource("1_diwf3")]
+item_data = ExtResource("5_a23fp")
