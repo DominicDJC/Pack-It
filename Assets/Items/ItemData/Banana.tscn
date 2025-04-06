@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://3q6cosjxwixo"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_lmf0n"]
+[ext_resource type="Texture2D" uid="uid://dsvlm7un1ccqh" path="res://Assets/Items/Sprites/Banana.png" id="2_v1fas"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_lmf0n")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_v1fas")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-28, -22, -23, -17, -17, -9, -11, -2, 0, 3, 13, -2, 24, -5, 29, -5, 32, -1, 29, 7, 20, 14, 5, 22, -7, 22, -18, 15, -28, 6, -32, 0, -32, -9, -27, -12, -31, -17, -31, -21)

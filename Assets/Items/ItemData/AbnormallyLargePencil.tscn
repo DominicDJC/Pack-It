@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlrg45pc8lm6m"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_pcrwc"]
+[ext_resource type="Texture2D" uid="uid://2ougdny4aine" path="res://Assets/Items/Sprites/AbnormallyLargePencil.png" id="2_xpvrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhn6m"]
+size = Vector2(22, 253)
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_pcrwc")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(7.90625, 7.90625)
+texture = ExtResource("2_xpvrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -0.5)
+shape = SubResource("RectangleShape2D_hhn6m")

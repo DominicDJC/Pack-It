@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7exk3f1dk2cb"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_udm51"]
+[ext_resource type="Texture2D" uid="uid://uq36aio5ua0t" path="res://Assets/Items/Sprites/Monitor.png" id="2_3h14o"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_udm51")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_3h14o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-28, 14, -34, 7, -34, -32, -31, -35, 35, -35, 37, -31, 37, 7, 31, 14, 11, 14, 11, 25, 23, 25, 29, 32, -26, 32, -19, 25, -8, 25, -8, 14)

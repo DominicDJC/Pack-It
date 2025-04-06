@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qxfg0rrj61l1"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_kwykq"]
+[ext_resource type="Texture2D" uid="uid://d0no2xjvdiwgj" path="res://Assets/Items/Sprites/Chair.png" id="2_ybv4d"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_kwykq")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("2_ybv4d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-70, 106, -59, 48, -62, 45, -68, 45, -77, 40, -83, 30, -87, 11, -90, -28, -86, -37, -75, -41, -49, -42, -36, -59, -20, -86, -7, -99, 7, -103, 41, -105, 75, -106, 86, -104, 91, -99, 94, -88, 94, -70, 93, -51, 91, -28, 86, 7, 79, 33, 63, 42, 76, 94, 74, 96, 71, 96, 56, 45, 45, 50, 31, 53, 33, 117, 28, 118, 22, 53, 0, 51, -4, 86, -7, 86, -9, 49, -49, 47, -63, 108)

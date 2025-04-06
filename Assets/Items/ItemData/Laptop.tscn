@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c25jh5j4d0jo5"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_waio8"]
+[ext_resource type="Texture2D" uid="uid://cp8l4lpe5bp0r" path="res://Assets/Items/Sprites/Laptop.png" id="2_6hlb4"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_waio8")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_6hlb4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, -32, -7, -32, -4, -35, 8, -35, 10, -31, 26, -31, 29, -28, 29, 7, 44, 23, 41, 28, -37, 28, -41, 26, -41, 26, -41, 22, -26, 7, -26, -29)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://df1sw18d3ypb5"]
+
+[ext_resource type="Script" uid="uid://bs88hrldq84pe" path="res://Objects/Item/item.gd" id="1_oceot"]
+[ext_resource type="Texture2D" uid="uid://bwqsh6baq6pne" path="res://Assets/Items/Sprites/RubberDuck.png" id="2_icci1"]
+
+[node name="Item" type="RigidBody2D"]
+script = ExtResource("1_oceot")
+metadata/_custom_type_script = "uid://bs88hrldq84pe"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_icci1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, 3, -9, -1, -9, -4, -15, -7, -13, -11, -9, -15, -3, -15, 1, -11, 1, -7, 0, -4, 6, -1, 9, -3, 13, -3, 13, 5, 9, 11, 3, 15, -5, 15, -11, 11, -11, 8, -13, 7)
